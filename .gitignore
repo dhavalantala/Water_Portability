@@ -89,3 +89,4 @@ target/
 .mypy_cache/
 
 water_venv/
+/metrics.json
