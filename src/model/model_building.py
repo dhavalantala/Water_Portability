@@ -82,7 +82,7 @@ def main():
     """Main function to execute the model building process."""
     params = load_params("params.yaml")
     n_estimators = params["model_building"]["n_estimators"]
-    train_data_path = "data/processed/train_processed.csv"
+    train_data_path = "data/processed/train_processed_mean.csv"
     model_path = "models/model.pkl"
 
     train_data = get_training_data(data_path=train_data_path)

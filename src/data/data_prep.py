@@ -21,8 +21,8 @@ def fill_missing_values(df):
         # Fill missing values with the mean of each column
         for column in df.columns:
             if df[column].isnull().any():
-                median_value = df[column].median()
-                df[column].fillna(median_value, inplace=True)
+                mean_value = df[column].mean()
+                df[column].fillna(mean_value, inplace=True)
         return df
     except Exception as e:
         raise Exception(f"Error filling missing values: {e}")
@@ -49,8 +49,8 @@ def main():
         test_processed_data = fill_missing_values(test_data)
         data_path = os.path.join("data", "processed")
         os.makedirs(data_path, exist_ok=True)  # Create directory if it doesn't exist
-        save_data(train_processed_data, os.path.join(data_path, "train_processed.csv"))
-        save_data(test_processed_data, os.path.join(data_path, "test_processed.csv"))
+        save_data(train_processed_data, os.path.join(data_path, "train_processed_mean.csv"))
+        save_data(test_processed_data, os.path.join(data_path, "test_processed_mean.csv"))
     except Exception as e:
         print(f"An error occurred: {e}")
 

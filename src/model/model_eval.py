@@ -96,7 +96,7 @@ def main():
         model_path = "models/model.pkl"
         metrics_path = "reports/metrics.json"
 
-        test_data = load_test_data(os.path.join(data_path, "test_processed.csv"))
+        test_data = load_test_data(os.path.join(data_path, "test_processed_mean.csv"))
         X_test, y_test = prepare_data(test_data)
         model = load_model(model_path=model_path)
         metrics = evaluate_model(model=model, X_test=X_test, y_test=y_test)
